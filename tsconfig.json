@@ -1,0 +1,26 @@
+/*  tsconfig.json */
+{
+  "compilerOptions": {
+    /* base config */
+    "target": "esnext",
+    "lib": [
+      "esnext"
+    ],
+    "removeComments": false,
+    "declaration": true,
+    "sourceMap": true,
+
+    "strict": true,
+    "noImplicitAny": false,
+
+    /* resolve */
+    "baseUrl": ".",
+    "outDir": "./lib",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src"
+  ]
+}

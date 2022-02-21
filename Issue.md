@@ -6,19 +6,19 @@ Problem Set below:
 
 // A range list is an aggregate of these ranges: [1, 5), [10, 11), [100, 201)
 
-/**
+/\*\*
 
-* * NOTE: Feel free to add any extra member variables/functions you like. */
+- - NOTE: Feel free to add any extra member variables/functions you like. \*/
 
-class RangeList { /** * Adds a range to the list * @param {Array<number>} range - Array of two integers that specify beginning and end of range.
+class RangeList { /\*\* _ Adds a range to the list _ @param {Array<number>} range - Array of two integers that specify beginning and end of range.
 
-*/ add(range) { // TODO: implement this }
+\*/ add(range) { // TODO: implement this }
 
-/** * Removes a range from the list * @param {Array<number>} range - Array of two integers that specify beginning and end of range.
+/\*\* _ Removes a range from the list _ @param {Array<number>} range - Array of two integers that specify beginning and end of range.
 
-*/ remove(range) { // TODO: implement this }
+\*/ remove(range) { // TODO: implement this }
 
-/** * Prints out the list of ranges in the range list */ print() { // TODO: implement this }
+/\*\* _ Prints out the list of ranges in the range list _/ print() { // TODO: implement this }
 
 }
 
