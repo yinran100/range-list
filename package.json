@@ -1,0 +1,23 @@
+{
+  "name": "range-list",
+  "version": "1.0.0",
+  "description": "for jerry",
+  "main": "index.js",
+  "keywords": [
+    "range",
+    "number"
+  ],
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yinran100/range-list.git"
+  },
+  "author": "yinran100",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yinran100/range-list/issues"
+  },
+  "homepage": "https://github.com/yinran100/range-list#readme"
+}
