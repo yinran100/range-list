@@ -1,24 +1,25 @@
-import path from 'path';
-import { existsSync } from 'fs';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
-import eslint from '@rbnlffl/rollup-plugin-eslint';
-import babel from '@rollup/plugin-babel';
-import pkg from './package.json';
+import path from 'path'
+import { existsSync } from 'fs'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import typescript from 'rollup-plugin-typescript2'
+import eslint from '@rbnlffl/rollup-plugin-eslint'
+import babel from '@rollup/plugin-babel'
+import pkg from './package.json'
 
-const extensions = ['.ts', '.js', '.tsx', '.jsx'];
+const extensions = ['.ts', '.js', '.tsx', '.jsx']
 const babelOptions = {
   // rootMode: 'upward',
   extensions,
   babelHelpers: 'bundled',
-};
-const index = extensions.findIndex(ext => existsSync(`./src/index${ext}`));
-const input = `./src/index${extensions[index]}`;
+}
+const index = extensions.findIndex(ext => existsSync(`./src/index${ext}`))
+const input = `./src/index${extensions[index]}`
 
 const paths = {
   input,
-  output: path.join(__dirname, '/lib'),
+  output: path.join(__dirname, './lib'),
+  tsconfig: path.join(__dirname, './tsconfig.json'),
 }
 
 export default {
@@ -26,13 +27,13 @@ export default {
   output: [
     // output commonjs
     {
-      file: path.join(paths.output, 'index.js'),
-      format: 'cjs',
+      file: pkg.main,
+      format: 'umd',
       name: pkg.name,
     },
     // output es
     {
-      file: path.join(paths.output, 'index.esm.js'),
+      file: pkg.module,
       format: 'es',
       name: pkg.name,
     },
@@ -46,7 +47,9 @@ export default {
     }),
     nodeResolve(),
     commonjs(),
-    typescript(),
+    typescript({
+      tsconfig: path.tsconfig,
+    }),
     babel({
       ...babelOptions,
       plugins: [
@@ -58,5 +61,5 @@ export default {
         ],
       ],
     }),
-  ]
-};
+  ],
+}

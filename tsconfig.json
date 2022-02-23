@@ -4,7 +4,8 @@
     /* base config */
     "target": "esnext",
     "lib": [
-      "esnext"
+      "esnext",
+      "dom"
     ],
     "removeComments": false,
     "declaration": true,
